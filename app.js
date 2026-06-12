@@ -1,0 +1,1 @@
+﻿document.getElementById("testBtn").addEventListener("click", () => { alert("Bağlantı Başarılı!\nHermes Proje Altyapısı Sorunsuz Şekilde Çalışıyor."); });
