@@ -1,1 +1,13 @@
-﻿# Hermes Development Platform`n`nAn automated local development infrastructure configured with advanced AI agents.`n`n## Features`n- **UTF-8 Support**: Perfect text rendering standard.`n- **Local Server Structure**: Ready for frontend asset linking.`n- **Git & GitHub Integration**: Configured for continuous delivery.`n`n## Architecture`n- `index.html` - Core frontend interface.`n- `style.css` - UI layout and modern aesthetics.`n- `app.js` - System verification and connectivity functionality.
+﻿# Hermes Development Platform
+
+An automated local development infrastructure configured with advanced AI agents.
+
+## Features
+- **UTF-8 Support**: Perfect text rendering standard.
+- **Local Server Structure**: Ready for frontend asset linking.
+- **Git & GitHub Integration**: Configured for continuous delivery.
+
+## Architecture
+- `index.html` - Core frontend interface.
+- `style.css` - UI layout and modern aesthetics.
+- `app.js` - System verification and connectivity functionality.
