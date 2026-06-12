@@ -1,1 +1,1 @@
-﻿document.getElementById("testBtn").addEventListener("click", () => { alert("Bağlantı Başarılı!\nHermes Proje Altyapısı Sorunsuz Şekilde Çalışıyor."); });
+﻿document.getElementById("testBtn").addEventListener("click", () => { alert("Connection Successful!\nHermes project infrastructure is running smoothly."); });
