@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -23,9 +23,18 @@ button:hover{background:#2563eb;}
 <div class="stats-box">
 <p>Project Status: <span style="color:#4ade80;font-weight:bold;">Active</span></p>
 <p>Developer: <span style="color:#60a5fa;">iamiskender</span></p>
+<p>Local Time: <span id="liveClock" style="color:#fbbf24;font-weight:bold;"></span></p>
 </div>
 <button id="testBtn">Check System Status</button>
 </div>
+<script>
+function updateClock() {
+  const now = new Date();
+  document.getElementById('liveClock').textContent = now.toLocaleTimeString('tr-TR');
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 <script src="app.js"></script>
 </body>
 </html>
