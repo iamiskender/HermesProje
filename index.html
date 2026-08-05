@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hermes Project Dashboard</title>
-<meta name="talentapp:project_verification" content="480da83362e060a497fea1d47d1ae712e758d4c2d76231bc22dcbaea4a7c2f367970b6502ce99936e67ddb192243abe3d37277e861b3fde522695c1f9be168c1">
+<meta name="talentapp:project_verification" content="480da83362e060a497fea1d47d1ae712e758d4c2d76231bc22dcbaea4a7c2f367970b6502ce99936e67ddb192243abe3d37277e86">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{background:linear-gradient(135deg,#0f172a,#1e1b4b);min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;color:#e2e8f0;}
@@ -13,6 +13,9 @@ h1{font-size:2rem;font-weight:700;margin-bottom:12px;}
 p{color:#94a3b8;margin-bottom:24px;}
 .stats-box{margin-bottom:32px;}
 .stats-box p{margin-bottom:8px;color:#cbd5e1;}
+.uptime-box{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);border-radius:10px;padding:16px;margin-bottom:32px;}
+.uptime-box p{color:#93c5fd;margin-bottom:4px;font-size:0.9rem;}
+.uptime-value{font-size:1.4rem;font-weight:700;color:#60a5fa;}
 button{background:#3b82f6;color:white;border:none;padding:14px 32px;border-radius:8px;font-size:1rem;cursor:pointer;}
 button:hover{background:#2563eb;}
 </style>
@@ -26,6 +29,10 @@ button:hover{background:#2563eb;}
 <p>Developer: <span style="color:#60a5fa;">iamiskender</span></p>
 <p>Local Time: <span id="liveClock" style="color:#fbbf24;font-weight:bold;"></span></p>
 </div>
+<div class="uptime-box">
+<p>System Uptime</p>
+<div class="uptime-value" id="uptime">00:00:00</div>
+</div>
 <button id="testBtn">Check System Status</button>
 </div>
 <script>
@@ -35,6 +42,18 @@ function updateClock() {
 }
 setInterval(updateClock, 1000);
 updateClock();
+
+const startTime = new Date();
+function updateUptime() {
+  const now = new Date();
+  const diff = Math.floor((now - startTime) / 1000);
+  const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+  const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+  const s = String(diff % 60).padStart(2, '0');
+  document.getElementById('uptime').textContent = h + ':' + m + ':' + s;
+}
+setInterval(updateUptime, 1000);
+updateUptime();
 </script>
 <script src="app.js"></script>
 </body>
