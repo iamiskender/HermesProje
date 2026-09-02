@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>Hermes Project Dashboard</title>
 <meta name="talentapp:project_verification" content="480da83362e060a497fea1d47d1ae712e758d4c2d76231bc22dcbaea4a7c2f367970b6502ce99936e67ddb192243abe3d37277e86">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:linear-gradient(135deg,#0f172a,#1e1b4b);min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;color:#e2e8f0;}
+body{background:linear-gradient(135deg,#0f172a,#1e1b4b);min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:'Segoe UI',sans-serif;color:#e2e8f0;font-size:clamp(14px,1.65vw,16px);padding:1.5rem 1rem;}
 .container{background:rgba(30,41,59,0.9);border-radius:16px;padding:48px 56px;text-align:center;max-width:600px;width:90%;box-shadow:0 25px 50px rgba(0,0,0,0.5);}
+.wrap{max-width:760px;margin:0 auto;padding:0 1rem;}
 h1{font-size:2rem;font-weight:700;margin-bottom:12px;}
 p{color:#94a3b8;margin-bottom:24px;}
 .stats-box{margin-bottom:32px;}
@@ -21,6 +22,7 @@ button:hover{background:#2563eb;}
 </style>
 </head>
 <body>
+<div class="wrap">
 <div class="container">
 <h1>Hermes Development Platform</h1>
 <p>System successfully configured and running on UTF-8 standard.</p>
@@ -35,24 +37,24 @@ button:hover{background:#2563eb;}
 </div>
 <button id="testBtn">Check System Status</button>
 </div>
+</div>
 <script>
-function updateClock() {
-  const now = new Date();
-  document.getElementById('liveClock').textContent = now.toLocaleTimeString('tr-TR');
+function updateClock(){
+  const now=new Date();
+  document.getElementById('liveClock').textContent=now.toLocaleTimeString('tr-TR');
 }
-setInterval(updateClock, 1000);
+setInterval(updateClock,1000);
 updateClock();
-
-const startTime = new Date();
-function updateUptime() {
-  const now = new Date();
-  const diff = Math.floor((now - startTime) / 1000);
-  const h = String(Math.floor(diff / 3600)).padStart(2, '0');
-  const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
-  const s = String(diff % 60).padStart(2, '0');
-  document.getElementById('uptime').textContent = h + ':' + m + ':' + s;
+const startTime=new Date();
+function updateUptime(){
+  const now=new Date();
+  const diff=Math.floor((now-startTime)/1000);
+  const h=String(Math.floor(diff/3600)).padStart(2,'0');
+  const m=String(Math.floor((diff%3600)/60)).padStart(2,'0');
+  const s=String(diff%60).padStart(2,'0');
+  document.getElementById('uptime').textContent=h+':'+m+':'+s;
 }
-setInterval(updateUptime, 1000);
+setInterval(updateUptime,1000);
 updateUptime();
 </script>
 <script src="app.js"></script>
